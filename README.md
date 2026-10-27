@@ -35,10 +35,10 @@ The production site is created in `dist/`. On Netlify, import the GitHub repo an
 - Monthly salary, other income, savings target, and editable budget categories
 - New-account salary, PF, savings, and category-budget amounts start at ₹0
 - Monthly fixed PF contribution is withheld from gross salary and tracked as savings
-- Overview shows lifetime PF contributions separately from all-time savings. All-time savings combines PF with the actual amount saved each month; monthly savings targets are not counted as saved money
-- Monthly plan lets users record their actual savings for each month; older months without an actual savings record count as ₹0 until updated
+- Overview shows lifetime PF contributions separately from all-time savings. All-time savings combines PF with savings transactions; monthly savings targets are not counted as saved money
+- Add a Savings transaction any time to update that month's saved/target progress and the all-time savings total
 - Saved monthly plans become defaults for newly created months; salary and category names, icons, and budgets can be customized
-- Add/delete income and expense transactions
+- Add/delete income, expense, and savings transactions
 - Search and filter transactions
 - Savings goals with progress and quick contributions
 - EMI calculator with reducing-balance and flat-rate estimates
@@ -54,7 +54,7 @@ New accounts start with an empty plan. Existing data from this browser is offere
 - Salary adjustment: enter expected salary and unpaid leave days (30-day calculation); the dashboard estimates salary after unpaid leave.
 - Actual gross salary before PF can be entered to override the estimate for that month.
 - PF savings are subtracted from gross salary (capped at the gross amount) before calculating income available for budgeting. Each month's PF value is saved separately.
-- Record the amount actually saved each month separately from the savings target. The all-time savings total uses actual recorded savings plus PF, never the target amount.
+- Record money saved with a Savings transaction at any time during the month. Monthly savings progress and all-time savings update from these transactions; the all-time total uses actual recorded savings plus PF, never the target amount.
 - Other income remains separate and is added to the adjusted/actual salary.
 - Each month's salary, PF, and leave settings are saved independently, preserving monthly history. Existing saved finance data is not reset when these defaults change.
 "# paisaplan-pro" 
