@@ -33,6 +33,9 @@ The production site is created in `dist/`. On Netlify, import the GitHub repo an
 - 12-month year dashboard with historical income, expenses, savings, monthly table, category breakdown, and 3/6/12-month filters
 - Month selector and previous/next month navigation
 - Monthly salary, other income, savings target, and editable budget categories
+- New-account salary, PF, savings, and category-budget amounts start at ₹0
+- Monthly fixed PF contribution is withheld from gross salary and tracked as savings
+- Lifetime PF savings totals contributions across all saved monthly plans
 - Saved monthly plans become defaults for newly created months; salary and category names, icons, and budgets can be customized
 - Add/delete income and expense transactions
 - Search and filter transactions
@@ -48,7 +51,8 @@ The production site is created in `dist/`. On Netlify, import the GitHub repo an
 ## Important
 New accounts start with an empty plan. Existing data from this browser is offered for import the first time a user signs in without existing cloud data; choosing not to import leaves the browser copy untouched. Use Backup regularly as an additional export. If the Supabase environment variables or SQL schema are missing, sign-in or cloud sync will not work. No real bank accounts are connected.
 - Salary adjustment: enter expected salary and unpaid leave days (30-day calculation); the dashboard estimates salary after unpaid leave.
-- Actual salary received can be entered to override the estimate for that month.
+- Actual gross salary before PF can be entered to override the estimate for that month.
+- PF savings are subtracted from gross salary (capped at the gross amount) before calculating income available for budgeting. Each month's PF value is saved separately.
 - Other income remains separate and is added to the adjusted/actual salary.
-- Each month's salary and leave settings are saved independently, preserving monthly history.
+- Each month's salary, PF, and leave settings are saved independently, preserving monthly history. Existing saved finance data is not reset when these defaults change.
 "# paisaplan-pro" 
