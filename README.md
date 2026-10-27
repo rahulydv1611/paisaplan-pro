@@ -35,7 +35,7 @@ The production site is created in `dist/`. On Netlify, import the GitHub repo an
 - Monthly salary, other income, savings target, and editable budget categories
 - New-account salary, PF, savings, and category-budget amounts start at ₹0
 - Monthly fixed PF contribution is withheld from gross salary and tracked as savings
-- Lifetime PF savings totals contributions across all saved monthly plans
+- All-time savings section combines PF contributions and monthly savings targets across saved plans, with a breakdown; targets are planned amounts, not verified deposits
 - Saved monthly plans become defaults for newly created months; salary and category names, icons, and budgets can be customized
 - Add/delete income and expense transactions
 - Search and filter transactions
