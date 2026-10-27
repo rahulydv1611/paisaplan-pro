@@ -25,6 +25,7 @@ The production site is created in `dist/`. On Netlify, import the GitHub repo an
 - 12-month year dashboard with historical income, expenses, savings, monthly table, category breakdown, and 3/6/12-month filters
 - Month selector and previous/next month navigation
 - Monthly salary, other income, savings target, and editable budget categories
+- Saved monthly plans become defaults for newly created months; salary and category names, icons, and budgets can be customized
 - Add/delete income and expense transactions
 - Search and filter transactions
 - Savings goals with progress and quick contributions
