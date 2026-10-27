@@ -1,23 +1,31 @@
 # PaisaPlan Pro
 
-A responsive React + Vite personal finance dashboard for planning monthly salary, tracking actual spending, reviewing past expenses across a 12-month dashboard, savings goals, and EMI estimates.
+A responsive React + Vite personal finance dashboard for planning monthly salary, tracking actual spending, reviewing past expenses across a 12-month dashboard, savings goals, and EMI estimates. User accounts and cloud data are powered by Supabase; the frontend can be deployed on Netlify.
+
+## Supabase setup
+1. Create a Supabase project.
+2. In the Supabase SQL Editor, run [`supabase/schema.sql`](./supabase/schema.sql). It creates the per-user data table and row-level security policies. Do not disable RLS.
+3. In Supabase **Authentication → URL Configuration**, set the Site URL to your deployed Netlify URL and add your local development URL (for example `http://localhost:5173`) to the allowed redirect URLs. Configure the email provider and confirmation behavior to suit your project.
+4. Copy the project URL and its public publishable/anon key. Never use a `service_role` key in this frontend.
 
 ## Run locally
-1. Install Node.js (LTS).
-2. Extract the ZIP and open a terminal in this folder.
-3. Run:
-   ```bash
-   npm install
-   npm run dev
-   ```
-4. Open the local URL Vite prints, usually `http://localhost:5173`.
+Create `.env.local` from `.env.example` and set:
+```text
+VITE_SUPABASE_URL=https://your-project-id.supabase.co
+VITE_SUPABASE_ANON_KEY=your-public-publishable-or-anon-key
+```
+Then run:
+```bash
+npm install
+npm run dev
+```
 
 ## Build for deployment
 ```bash
 npm run build
 npm run preview
 ```
-The production site is created in `dist/`. On Netlify, import the GitHub repo and use build command `npm run build` and publish directory `dist`.
+The production site is created in `dist/`. On Netlify, import the GitHub repo and use build command `npm run build` and publish directory `dist`. Add `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` under **Site configuration → Environment variables** in Netlify, then trigger a new deploy. These variables are embedded in the frontend build; only use the public Supabase key and rely on the included row-level security policies to protect user records.
 
 ## Features
 - React + Vite project structure
@@ -31,11 +39,13 @@ The production site is created in `dist/`. On Netlify, import the GitHub repo an
 - Savings goals with progress and quick contributions
 - EMI calculator with reducing-balance and flat-rate estimates
 - JSON backup/restore and CSV transaction export
+- Email/password accounts, password reset, and per-account cloud sync across devices
+- One-time option to import existing browser data into a new account
 - Responsive mobile sidebar
-- Local browser storage; no server or bank connection required
+- Supabase-backed account data; no bank connection
 
 ## Important
-First launch seeds sample historical transactions so the year dashboard is not empty. These are clearly marked as demo-style sample data in the history UI. Replace them with real records before relying on the totals. Data is stored in `localStorage` on the current browser/device; use Backup regularly. The demo profile is not secure authentication, and no real bank accounts are connected.
+New accounts start with an empty plan. Existing data from this browser is offered for import the first time a user signs in without existing cloud data; choosing not to import leaves the browser copy untouched. Use Backup regularly as an additional export. If the Supabase environment variables or SQL schema are missing, sign-in or cloud sync will not work. No real bank accounts are connected.
 - Salary adjustment: enter expected salary and unpaid leave days (30-day calculation); the dashboard estimates salary after unpaid leave.
 - Actual salary received can be entered to override the estimate for that month.
 - Other income remains separate and is added to the adjusted/actual salary.
