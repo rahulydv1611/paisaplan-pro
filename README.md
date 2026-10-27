@@ -40,6 +40,7 @@ The production site is created in `dist/`. On Netlify, import the GitHub repo an
 - EMI calculator with reducing-balance and flat-rate estimates
 - JSON backup/restore and CSV transaction export
 - Email/password accounts, password reset, and per-account cloud sync across devices
+- Custom profile photo, chosen initial, or blank avatar synced with the account
 - One-time option to import existing browser data into a new account
 - Responsive mobile sidebar
 - Supabase-backed account data; no bank connection
