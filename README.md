@@ -35,7 +35,8 @@ The production site is created in `dist/`. On Netlify, import the GitHub repo an
 - Monthly salary, other income, savings target, and editable budget categories
 - New-account salary, PF, savings, and category-budget amounts start at ₹0
 - Monthly fixed PF contribution is withheld from gross salary and tracked as savings
-- Monthly plan shows an all-time savings summary beside PF, combining PF contributions and saved monthly savings targets; targets are planned amounts, not verified deposits
+- Overview shows lifetime PF contributions separately from all-time savings. All-time savings combines PF with the actual amount saved each month; monthly savings targets are not counted as saved money
+- Monthly plan lets users record their actual savings for each month; older months without an actual savings record count as ₹0 until updated
 - Saved monthly plans become defaults for newly created months; salary and category names, icons, and budgets can be customized
 - Add/delete income and expense transactions
 - Search and filter transactions
@@ -53,6 +54,7 @@ New accounts start with an empty plan. Existing data from this browser is offere
 - Salary adjustment: enter expected salary and unpaid leave days (30-day calculation); the dashboard estimates salary after unpaid leave.
 - Actual gross salary before PF can be entered to override the estimate for that month.
 - PF savings are subtracted from gross salary (capped at the gross amount) before calculating income available for budgeting. Each month's PF value is saved separately.
+- Record the amount actually saved each month separately from the savings target. The all-time savings total uses actual recorded savings plus PF, never the target amount.
 - Other income remains separate and is added to the adjusted/actual salary.
 - Each month's salary, PF, and leave settings are saved independently, preserving monthly history. Existing saved finance data is not reset when these defaults change.
 "# paisaplan-pro" 
