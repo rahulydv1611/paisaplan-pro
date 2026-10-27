@@ -25,7 +25,7 @@ npm run dev
 npm run build
 npm run preview
 ```
-The production site is created in `dist/`. On Netlify, import the GitHub repo and use build command `npm run build` and publish directory `dist`. Add `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` under **Site configuration → Environment variables** in Netlify, then trigger a new deploy. These variables are embedded in the frontend build; only use the public Supabase key and rely on the included row-level security policies to protect user records.
+The production site is created in `dist/`. Vite splits React, charts, Supabase, and icons into separate vendor chunks to keep each generated JavaScript file within the configured bundle warning threshold. On Netlify, import the GitHub repo and use build command `npm run build` and publish directory `dist`. Add `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` under **Site configuration → Environment variables** in Netlify, then trigger a new deploy. These variables are embedded in the frontend build; only use the public Supabase key and rely on the included row-level security policies to protect user records.
 
 ## Features
 - React + Vite project structure
